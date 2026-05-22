@@ -1,0 +1,2 @@
+# curiosityapp-website
+Landing Page
