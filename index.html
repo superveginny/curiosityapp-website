@@ -452,21 +452,43 @@
         const firstSection = document.querySelector(".terms-section");
         if (!header || !firstSection) return;
 
+        const getAnchorMetrics = () => {
+          const headerHeight = Math.ceil(header.getBoundingClientRect().height);
+          const gap = parseFloat(getComputedStyle(root).getPropertyValue("--anchor-gap")) || 20;
+          return { headerHeight, gap };
+        };
+
         const updateAnchorOffset = () => {
-          const headerHeight = header.getBoundingClientRect().height;
+          const { headerHeight, gap } = getAnchorMetrics();
           const sectionPadding = parseFloat(getComputedStyle(firstSection).paddingTop) || 0;
-          const gap = parseFloat(getComputedStyle(root).getPropertyValue("--anchor-gap")) || 8;
           const offset = Math.max(0, Math.ceil(headerHeight + gap - sectionPadding));
           root.style.setProperty("--anchor-offset", `${offset}px`);
         };
 
-        const alignHashTarget = () => {
+        const alignHashTarget = (behavior = "auto") => {
           if (!location.hash) return;
           const target = document.querySelector(location.hash);
-          if (target) target.scrollIntoView();
+          if (!target) return;
+          const heading = target.matches(".terms-section") ? target.querySelector("h2") : target;
+          const anchor = heading || target;
+          const { headerHeight, gap } = getAnchorMetrics();
+          const top = anchor.getBoundingClientRect().top + window.scrollY - headerHeight - gap;
+          window.scrollTo({ top: Math.max(0, top), behavior });
         };
 
         updateAnchorOffset();
+        document.addEventListener("click", (event) => {
+          const link = event.target.closest('a[href^="#"]');
+          if (!link) return;
+          const hash = link.getAttribute("href");
+          if (!hash || hash === "#") return;
+          const target = document.querySelector(hash);
+          if (!target) return;
+          event.preventDefault();
+          history.pushState(null, "", hash);
+          updateAnchorOffset();
+          alignHashTarget("smooth");
+        });
         window.addEventListener("resize", updateAnchorOffset);
         window.addEventListener("orientationchange", () => requestAnimationFrame(updateAnchorOffset));
         window.addEventListener("load", () => {

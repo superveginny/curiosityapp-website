@@ -13,7 +13,7 @@
   --soft-gold: #f5ead1;
   --shadow: 0 20px 60px rgba(55, 45, 35, 0.12);
   --radius: 8px;
-  --anchor-gap: 8px;
+  --anchor-gap: 20px;
   --anchor-offset: 40px;
   font-family:
     "Hiragino Sans",
