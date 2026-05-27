@@ -233,6 +233,11 @@ h2 {
   align-items: start;
 }
 
+.home-layout {
+  width: min(960px, calc(100% - 32px));
+  margin: 40px auto 72px;
+}
+
 .toc {
   position: sticky;
   top: 88px;
@@ -459,6 +464,11 @@ h2 {
   }
 
   .layout {
+    width: min(100% - 24px, 1120px);
+    margin: 24px auto 48px;
+  }
+
+  .home-layout {
     width: min(100% - 24px, 1120px);
     margin: 24px auto 48px;
   }
