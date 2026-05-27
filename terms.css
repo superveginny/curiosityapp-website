@@ -13,10 +13,8 @@
   --soft-gold: #f5ead1;
   --shadow: 0 20px 60px rgba(55, 45, 35, 0.12);
   --radius: 8px;
-  --header-height: 65px;
-  --section-padding-top: 34px;
   --anchor-gap: 8px;
-  --anchor-offset: calc(var(--header-height) + var(--anchor-gap) - var(--section-padding-top));
+  --anchor-offset: 40px;
   font-family:
     "Hiragino Sans",
     "Hiragino Kaku Gothic ProN",
@@ -281,7 +279,7 @@ h2 {
 .terms-section {
   padding: 34px 42px;
   border-bottom: 1px solid var(--line);
-  scroll-margin-top: max(0px, var(--anchor-offset));
+  scroll-margin-top: var(--anchor-offset);
 }
 
 .terms-section p,
@@ -421,8 +419,7 @@ h2 {
 
 @media (max-width: 640px) {
   :root {
-    --header-height: 118px;
-    --section-padding-top: 26px;
+    --anchor-offset: 132px;
   }
 
   .header-inner,

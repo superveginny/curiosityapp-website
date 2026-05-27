@@ -322,5 +322,35 @@
         <a href="#page-title">ページ上部へ</a>
       </div>
     </footer>
+    <script>
+      (() => {
+        const root = document.documentElement;
+        const header = document.querySelector(".site-header");
+        const firstSection = document.querySelector(".terms-section");
+        if (!header || !firstSection) return;
+
+        const updateAnchorOffset = () => {
+          const headerHeight = header.getBoundingClientRect().height;
+          const sectionPadding = parseFloat(getComputedStyle(firstSection).paddingTop) || 0;
+          const gap = parseFloat(getComputedStyle(root).getPropertyValue("--anchor-gap")) || 8;
+          const offset = Math.max(0, Math.ceil(headerHeight + gap - sectionPadding));
+          root.style.setProperty("--anchor-offset", `${offset}px`);
+        };
+
+        const alignHashTarget = () => {
+          if (!location.hash) return;
+          const target = document.querySelector(location.hash);
+          if (target) target.scrollIntoView();
+        };
+
+        updateAnchorOffset();
+        window.addEventListener("resize", updateAnchorOffset);
+        window.addEventListener("orientationchange", () => requestAnimationFrame(updateAnchorOffset));
+        window.addEventListener("load", () => {
+          updateAnchorOffset();
+          requestAnimationFrame(alignHashTarget);
+        });
+      })();
+    </script>
   </body>
 </html>
