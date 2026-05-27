@@ -28,6 +28,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 96px;
 }
 
 body {
@@ -276,6 +277,7 @@ h2 {
 .terms-section {
   padding: 34px 42px;
   border-bottom: 1px solid var(--line);
+  scroll-margin-top: 96px;
 }
 
 .terms-section p,
@@ -462,6 +464,11 @@ h2 {
   .terms-section,
   .template-note {
     padding: 26px 20px;
+    scroll-margin-top: 152px;
+  }
+
+  html {
+    scroll-padding-top: 152px;
   }
 }
 
