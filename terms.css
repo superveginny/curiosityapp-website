@@ -29,12 +29,19 @@
 }
 
 html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: #ffffff;
   scroll-behavior: smooth;
   scroll-padding-top: 0;
 }
 
 body {
+  width: 100%;
+  max-width: 100%;
   margin: 0;
+  overflow-x: hidden;
   background: var(--bg);
   color: var(--text);
   line-height: 1.8;
@@ -47,6 +54,7 @@ body.menu-open {
 
 a {
   color: var(--accent-strong);
+  overflow-wrap: anywhere;
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.18em;
 }
@@ -60,8 +68,7 @@ a:hover {
   top: 0;
   z-index: 10;
   border-bottom: 1px solid rgba(222, 215, 205, 0.82);
-  background: rgba(255, 253, 250, 0.92);
-  backdrop-filter: blur(14px);
+  background: #ffffff;
 }
 
 .header-inner,
@@ -82,9 +89,16 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
   color: var(--text);
   font-weight: 700;
   text-decoration: none;
+}
+
+.brand span:not(.brand-mark) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .brand-mark {
@@ -202,10 +216,12 @@ a:hover {
 
 .hero {
   border-bottom: 1px solid var(--line);
+  background: #ffffff;
 }
 
 .hero-inner {
   width: min(1120px, calc(100% - 32px));
+  max-width: 100%;
   margin: 0 auto;
   padding: 72px 0 48px;
 }
@@ -241,9 +257,11 @@ h2 {
   margin: 22px 0 0;
   color: #413b35;
   font-size: 1.05rem;
+  overflow-wrap: anywhere;
 }
 
 .summary-panel {
+  min-width: 0;
   max-width: 980px;
   margin-top: 34px;
   padding: 22px;
@@ -265,10 +283,11 @@ h2 {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--line);
+  background: #ffffff;
 }
 
 .summary-grid article {
+  min-width: 0;
   min-height: 132px;
   padding: 18px;
   background: var(--surface-strong);
@@ -297,10 +316,11 @@ h2 {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--line);
+  background: #ffffff;
 }
 
 .meta-list div {
+  min-width: 0;
   padding: 14px 16px;
   background: #ffffff;
 }
@@ -326,16 +346,19 @@ h2 {
   grid-template-columns: 260px minmax(0, 1fr);
   gap: 32px;
   width: min(1120px, calc(100% - 32px));
+  max-width: 100%;
   margin: 40px auto 72px;
   align-items: start;
 }
 
 .home-layout {
   width: min(960px, calc(100% - 32px));
+  max-width: 100%;
   margin: 40px auto 72px;
 }
 
 .toc {
+  min-width: 0;
   position: sticky;
   top: 88px;
   padding: 18px;
@@ -371,6 +394,8 @@ h2 {
 }
 
 .terms-card {
+  min-width: 0;
+  max-width: 100%;
   overflow: visible;
   border: 0;
   border-radius: 0;
@@ -379,8 +404,11 @@ h2 {
 }
 
 .terms-section {
+  min-width: 0;
+  max-width: 100%;
   padding: 34px 42px;
   border-bottom: 1px solid var(--line);
+  overflow-wrap: anywhere;
   scroll-margin-top: var(--anchor-offset);
 }
 
@@ -392,6 +420,7 @@ h2 {
 
 .terms-section ol,
 .terms-section ul {
+  max-width: 100%;
   padding-left: 1.3rem;
 }
 
@@ -439,7 +468,7 @@ h2 {
 
 .policy-table tbody th {
   width: 24%;
-  background: rgba(231, 238, 242, 0.6);
+  background: #ffffff;
   color: var(--ink);
   font-weight: 800;
 }
@@ -467,6 +496,8 @@ h2 {
 .contact-box {
   display: grid;
   gap: 4px;
+  min-width: 0;
+  max-width: 100%;
   margin-top: 16px;
   padding: 18px;
   border: 1px solid var(--line);
@@ -492,7 +523,7 @@ h2 {
 
 .site-footer {
   border-top: 1px solid var(--line);
-  background: var(--surface);
+  background: #ffffff;
 }
 
 .footer-inner {
@@ -559,12 +590,12 @@ h2 {
   }
 
   .layout {
-    width: min(100% - 24px, 1120px);
+    width: min(calc(100% - 24px), 1120px);
     margin: 24px auto 48px;
   }
 
   .home-layout {
-    width: min(100% - 24px, 1120px);
+    width: min(calc(100% - 24px), 1120px);
     margin: 24px auto 48px;
   }
 
@@ -574,7 +605,17 @@ h2 {
 
   .terms-section,
   .template-note {
-    padding: 26px 20px;
+    padding: 26px 0;
+  }
+
+  .summary-panel {
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+  }
+
+  .policy-table {
+    min-width: 620px;
   }
 }
 
