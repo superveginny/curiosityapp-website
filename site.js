@@ -83,7 +83,7 @@
 
     if (shouldFix) {
       toc.style.setProperty("--toc-fixed-left", `${Math.round(layoutRect.left)}px`);
-      toc.style.setProperty("--toc-fixed-width", "260px");
+      toc.style.setProperty("--toc-fixed-width", `${Math.round(toc.getBoundingClientRect().width)}px`);
       toc.classList.add("is-fixed");
     } else {
       resetToc();

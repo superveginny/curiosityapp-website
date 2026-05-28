@@ -16,6 +16,8 @@
   --header-height: 64px;
   --anchor-gap: 20px;
   --anchor-offset: 40px;
+  --toc-width: 260px;
+  --layout-gap: 32px;
   font-family:
     "Hiragino Sans",
     "Hiragino Kaku Gothic ProN",
@@ -234,6 +236,25 @@ a:hover {
   padding: 72px 0 48px;
 }
 
+@media (min-width: 641px) {
+  .hero-inner {
+    display: grid;
+    grid-template-columns: var(--toc-width) minmax(0, 1fr);
+    column-gap: var(--layout-gap);
+  }
+
+  .hero-inner > h1,
+  .hero-inner > .lead,
+  .hero-inner > .summary-panel {
+    grid-column: 1 / -1;
+  }
+
+  .hero-inner > .meta-list {
+    grid-column: 2;
+    justify-self: center;
+  }
+}
+
 h1,
 h2 {
   margin: 0;
@@ -354,8 +375,8 @@ h2 {
 
 .layout {
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr);
-  gap: 32px;
+  grid-template-columns: var(--toc-width) minmax(0, 1fr);
+  gap: var(--layout-gap);
   width: min(1120px, calc(100% - 32px));
   max-width: 100%;
   margin: 40px auto 72px;
@@ -384,7 +405,7 @@ h2 {
   top: calc(var(--header-height) + 24px);
   left: var(--toc-fixed-left, max(16px, calc((100vw - 1120px) / 2)));
   z-index: 5;
-  width: var(--toc-fixed-width, 260px);
+  width: var(--toc-fixed-width, var(--toc-width));
 }
 
 .toc-title {
