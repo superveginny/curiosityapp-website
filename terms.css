@@ -104,9 +104,9 @@ a:hover {
 .menu-close {
   display: inline-grid;
   place-items: center;
-  border: 1px solid var(--line);
+  border: 0;
   border-radius: 8px;
-  background: var(--surface-strong);
+  background: transparent;
   color: var(--ink);
   cursor: pointer;
 }
@@ -128,7 +128,7 @@ a:hover {
 
 .menu-toggle:hover,
 .menu-close:hover {
-  border-color: rgba(159, 63, 47, 0.42);
+  background: rgba(231, 238, 242, 0.68);
   color: var(--accent-strong);
 }
 
@@ -152,7 +152,7 @@ a:hover {
   z-index: 40;
   display: flex;
   flex-direction: column;
-  width: min(360px, calc(100% - 44px));
+  width: min(320px, calc(100% - 64px));
   height: 100dvh;
   padding: 18px;
   border-left: 1px solid var(--line);
@@ -186,7 +186,7 @@ a:hover {
 .menu-close {
   width: 36px;
   height: 36px;
-  font-size: 1.15rem;
+  font-size: 1.55rem;
   line-height: 1;
 }
 
