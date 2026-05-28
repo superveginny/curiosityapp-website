@@ -250,7 +250,7 @@ a:hover {
   }
 
   .hero-inner > .meta-list {
-    grid-column: 2;
+    grid-column: 1 / -1;
     justify-self: center;
   }
 }
@@ -339,6 +339,7 @@ h2 {
 .meta-list {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
+  width: min(360px, 100%);
   max-width: 360px;
   margin: 32px auto 0;
   overflow: hidden;
