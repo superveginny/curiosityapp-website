@@ -251,7 +251,7 @@ a:hover {
 
   .hero-inner > .meta-list {
     grid-column: 1 / -1;
-    justify-self: center;
+    justify-self: start;
   }
 }
 
@@ -341,7 +341,7 @@ h2 {
   grid-template-columns: minmax(0, 1fr);
   width: min(360px, 100%);
   max-width: 360px;
-  margin: 32px auto 0;
+  margin: 32px 0 0;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius);
