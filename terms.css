@@ -316,17 +316,20 @@ h2 {
 
 .meta-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1px;
-  max-width: 840px;
-  margin: 32px 0 0;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 360px;
+  margin: 32px auto 0;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: #ffffff;
+  text-align: center;
 }
 
 .meta-list div {
+  display: grid;
+  align-content: center;
+  justify-items: center;
   min-width: 0;
   padding: 14px 16px;
   background: #ffffff;
