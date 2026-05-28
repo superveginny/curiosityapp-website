@@ -581,7 +581,7 @@ h2 {
   }
 
   .hero-inner {
-    width: min(calc(100% - 88px), 1120px);
+    width: min(calc(100% - 72px), 1120px);
     padding: 48px 0 32px;
   }
 
@@ -599,12 +599,12 @@ h2 {
   }
 
   .layout {
-    width: min(calc(100% - 88px), 1120px);
+    width: min(calc(100% - 72px), 1120px);
     margin: 24px auto 48px;
   }
 
   .home-layout {
-    width: min(calc(100% - 88px), 1120px);
+    width: min(calc(100% - 72px), 1120px);
     margin: 24px auto 48px;
   }
 
