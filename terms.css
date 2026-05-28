@@ -411,13 +411,6 @@ h2 {
   width: var(--toc-fixed-width, var(--toc-width));
 }
 
-.toc-title {
-  margin: 0 0 10px;
-  color: var(--ink);
-  font-size: 0.86rem;
-  font-weight: 800;
-}
-
 .toc ol {
   display: grid;
   gap: 6px;
