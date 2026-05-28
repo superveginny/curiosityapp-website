@@ -531,6 +531,14 @@ h2 {
   color: #334653;
 }
 
+.effective-note {
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-align: right;
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   background: #ffffff;
