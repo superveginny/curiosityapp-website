@@ -1,7 +1,7 @@
 :root {
   color-scheme: light;
-  --bg: #f7f5ef;
-  --surface: #fffdfa;
+  --bg: #ffffff;
+  --surface: #ffffff;
   --surface-strong: #ffffff;
   --text: #24211e;
   --muted: #6f6860;
@@ -9,8 +9,8 @@
   --accent: #9f3f2f;
   --accent-strong: #7d3025;
   --ink: #253746;
-  --soft-blue: #e7eef2;
-  --soft-gold: #f5ead1;
+  --soft-blue: #ffffff;
+  --soft-gold: #ffffff;
   --shadow: 0 20px 60px rgba(55, 45, 35, 0.12);
   --radius: 8px;
   --anchor-gap: 20px;
@@ -35,9 +35,7 @@ html {
 
 body {
   margin: 0;
-  background:
-    linear-gradient(180deg, rgba(231, 238, 242, 0.72), rgba(247, 245, 239, 0) 360px),
-    var(--bg);
+  background: var(--bg);
   color: var(--text);
   line-height: 1.8;
   letter-spacing: 0;
@@ -251,7 +249,7 @@ h2 {
   padding: 22px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: rgba(255, 253, 250, 0.82);
+  background: #ffffff;
 }
 
 .summary-panel h2 {
@@ -304,7 +302,7 @@ h2 {
 
 .meta-list div {
   padding: 14px 16px;
-  background: rgba(255, 253, 250, 0.88);
+  background: #ffffff;
 }
 
 .meta-list dt,
@@ -343,7 +341,7 @@ h2 {
   padding: 18px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: rgba(255, 253, 250, 0.78);
+  background: #ffffff;
 }
 
 .toc-title {
@@ -373,11 +371,11 @@ h2 {
 }
 
 .terms-card {
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface);
-  box-shadow: var(--shadow);
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .terms-section {
