@@ -9,6 +9,7 @@
     >
     <title>[アプリ名] 利用規約</title>
     <link rel="stylesheet" href="./terms.css">
+    <script src="./site.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -17,11 +18,22 @@
           <span class="brand-mark" aria-hidden="true">N</span>
           <span>[アプリ名]</span>
         </a>
-        <nav class="header-nav" aria-label="関連ページ">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="メニューを開く">
+          <span class="menu-toggle-line" aria-hidden="true"></span>
+          <span class="menu-toggle-line" aria-hidden="true"></span>
+          <span class="menu-toggle-line" aria-hidden="true"></span>
+        </button>
+        <div class="menu-backdrop" data-menu-close hidden></div>
+        <nav id="site-menu" class="site-menu" aria-label="サイトメニュー" hidden>
+          <div class="site-menu-header">
+            <p>メニュー</p>
+            <button class="menu-close" type="button" data-menu-close aria-label="メニューを閉じる">&times;</button>
+          </div>
           <a href="./index.html">トップ</a>
-          <a href="./support.html">ヘルプ</a>
-          <a href="./guidelines.html">ガイドライン</a>
+          <a href="./support.html">ヘルプとサポート</a>
+          <a href="./guidelines.html">コミュニティガイドライン</a>
           <a href="./privacy.html">プライバシーポリシー</a>
+          <a href="./terms.html">利用規約</a>
           <a href="mailto:[お問い合わせメールアドレス]">お問い合わせ</a>
         </nav>
       </div>
