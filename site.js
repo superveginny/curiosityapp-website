@@ -58,7 +58,7 @@
   const header = document.querySelector(".site-header");
   if (!toc || !layout || !header) return;
 
-  const desktopQuery = window.matchMedia("(min-width: 761px)");
+  const desktopQuery = window.matchMedia("(min-width: 641px)");
   let ticking = false;
 
   const resetToc = () => {
